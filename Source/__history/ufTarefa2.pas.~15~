@@ -1,0 +1,93 @@
+unit ufTarefa2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, ufBase, Vcl.StdCtrls, Vcl.Buttons,
+  Vcl.ComCtrls, System.Threading;
+
+type
+  TfTarefa2 = class(TfBase)
+    BitBtn1: TBitBtn;
+    pbThread1: TProgressBar;
+    pbThread2: TProgressBar;
+    Label1: TLabel;
+    edtTempo_T1: TEdit;
+    Label2: TLabel;
+    Label3: TLabel;
+    edtTempo_T2: TEdit;
+    Label4: TLabel;
+    procedure FormDestroy(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
+  private
+    { Private declarations }
+    procedure ProcessarT1;
+    procedure ProcessarT2;
+  public
+    { Public declarations }
+  end;
+
+var
+  fTarefa2: TfTarefa2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfTarefa2.BitBtn1Click(Sender: TObject);
+begin
+   ProcessarT1;
+   ProcessarT2;
+end;
+
+procedure TfTarefa2.FormDestroy(Sender: TObject);
+begin
+   fTarefa2 := nil;
+end;
+
+procedure TfTarefa2.ProcessarT1;
+begin
+   TTask.Run(procedure
+             var
+               I: Integer;
+             begin
+               pbThread1.Max := 100;
+                pbThread1.Position := 0;
+                pbThread1.Visible := True;
+              for I := 0 to 99 do
+              begin
+                Sleep(StrToInt(edtTempo_T1.Text));
+                TThread.Synchronize(TThread.CurrentThread,
+                                    procedure
+                                    begin
+                                          pbThread1.Position := pbThread1.Position + 1;
+
+                                    end);
+              end;
+               end);
+end;
+
+procedure TfTarefa2.ProcessarT2;
+begin
+    TTask.Run(procedure
+            var
+              I: Integer;
+            begin
+                pbThread2.Max := 100;
+                pbThread2.Position := 0;
+                pbThread2.Visible := True;
+              for I := 0 to 99 do
+              begin
+                Sleep(StrToInt(edtTempo_T2.Text));
+                TThread.Synchronize(TThread.CurrentThread,
+                                    procedure
+                                    begin
+                                          pbThread2.Position := pbThread2.Position + 1;
+
+                                    end);
+              end;
+            end);
+end;
+
+end.

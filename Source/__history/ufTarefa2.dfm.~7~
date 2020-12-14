@@ -1,0 +1,6 @@
+inherited fTarefa2: TfTarefa2
+  Caption = 'Threads'
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 13
+end

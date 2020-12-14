@@ -1,0 +1,6 @@
+inherited fTarefa1: TfTarefa1
+  Caption = ''
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 13
+end

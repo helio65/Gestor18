@@ -1,0 +1,14 @@
+inherited fTarefa2: TfTarefa2
+  Caption = 'Threads'
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 13
+  object BitBtn1: TBitBtn
+    Left = 24
+    Top = 24
+    Width = 75
+    Height = 25
+    Caption = 'Processar'
+    TabOrder = 0
+  end
+end

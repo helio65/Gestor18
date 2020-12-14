@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/12/10 15:12:58.000.909,=rtl.dcp</Transaction>
+    <Transaction>2020/12/10 15:14:44.000.791,C:\Users\carlo\Desktop\Helio\spComponentesDT.dproj=C:\Users\carlo\Documents\Embarcadero\Studio\Projects\Package1.dproj</Transaction>
+    <Transaction>2020/12/10 15:15:17.000.560,=C:\Users\carlo\Desktop\Helio\Unit1.pas</Transaction>
+    <Transaction>2020/12/10 15:15:23.000.350,C:\Users\carlo\Desktop\Helio\uspComponentesRegistro.pas=C:\Users\carlo\Desktop\Helio\Unit1.pas</Transaction>
+    <Transaction>2020/12/10 15:16:54.000.475,=designide.dcp</Transaction>
+    <Transaction>2020/12/10 15:19:25.000.379,=spComponentes.dcp</Transaction>
+  </Transactions>
+</BorlandProject>
